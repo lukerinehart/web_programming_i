@@ -7,7 +7,7 @@ ON_PYTHONANYWHERE = "PYTHONANYWHERE_DOMAIN" in os.environ
  
 # Local vs Pythonanywhere
 if ON_PYTHONANYWHERE:
-    from bottle import default_application
+    from bottle import default_app
 else:
     from bottle import run, debug
 
@@ -39,7 +39,7 @@ def post_new_item():
 
 
 if ON_PYTHONANYWHERE:
-     application = dafault_application()
+     application = default_app()
 else:
     debug(True)
     run(host='localhost', port=8080)

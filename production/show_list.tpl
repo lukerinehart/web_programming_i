@@ -1,23 +1,31 @@
-<p>Todo List</p>
-<table border="1">
+<html>
+<head>
+<title>Todo List</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">]
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+</head>
+<body>
+<h3 class="w3-block w3-teal w3-center"> Basic Todo List, version 1.1</h3>
+
+<table class="w3-table w3-bordered w3-border">
  %for row in rows:
     <tr>
-        <td>{{row[0]}}</td>
+        <td> <a href="/update_item/{{row[0]}}"><i class="material-icons">edit</i></a></td>
         <td>
-             <a href="/update_item/{{row[0]}}">{{row[1]}}</a>
+             {{row[1]}}
         </td>
         <td>
         %if row[2]==0:
-            <a href="/set_status/{{row[0]}}/1">{{row[2]}}</a>
+            <a href="/set_status/{{row[0]}}/1"><i class="material-icons">check_box_outline_blank</i></a>
         %else:
-            <a href="/set_status/{{row[0]}}/0">{{row[2]}}</a>
+            <a href="/set_status/{{row[0]}}/0"><i class="material-icons">check_box</i></a>
         %end
         <td>
-            <a href="/delete_item/{{row[0]}}">Delete</a>
+            <a href="/delete_item/{{row[0]}}"><i class="material-icons">delete</i></a>
         <td>
     </tr>
 %end
 </table>
-
-<a href="/new_item">New Item</a>
-<!-- <a href="delete_item/14">We don't like 14</a> -->
+<a href="/new_item"><button class='w3-button w3-block w3-teal'>New Item</button></a>
+</body>
+</html>
