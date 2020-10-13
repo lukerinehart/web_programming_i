@@ -23,6 +23,11 @@ def get_show_list():
     #return str(result)
     return template("show_list", rows = result)    # creates file, templates are like html
 
+@get("/sandbox")
+def get_sandbox():
+    return template("sandbox")
+
+
 @get("/set_status/<id:int>/<value:int>")
 def set_status(id, value):
     connection = sqlite3.connect("todo.db")
