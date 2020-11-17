@@ -85,8 +85,13 @@ def post_update_item():
     cursor.close()
     redirect("/")
 
+@get("/picture")
+        return template("picture")
+
 
 visits = 0
+visit_count = {
+    }
 visit_times = {
     }
 first_visit = {
@@ -98,6 +103,11 @@ def get_visit():
     visit_counter = int(request.cookies.get("visit_counter", '0'))
     user_id = request.cookies.get("user_id",str(random.randint(10000,20000)))
     visit_counter = visit_counter + 1
+    if user_id in visit_count:
+        visit_countp[user_id] = visit_count[user_id + 1]
+    else:
+        visit_count[user_id] = 1
+        
     response.set_cookie("visit_counter", str(visit_counter))
     response.set_cookie("user_id", user_id, max_age=300, secure=True, httponly=True,)
     last_visit = visit_times.get(user_id, "never")

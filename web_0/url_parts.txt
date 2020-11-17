@@ -1,0 +1,11 @@
+
+http://123.255.56.78
+http://www.yahoo.com:80/deals
+
+IPv4
+
+subdomain is a server with a domain
+a domain is a registered string owned by someone
+TLD a category of the domains available managed by one agency
+
+
